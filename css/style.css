@@ -1,182 +1,105 @@
 /*-------------APPLIES TO ALL-------------*/
 
-/*
-my code that I wrote on 3/12/24
-
-*{
-  font-family: Arial, Helvetica, sans-serif;
-  color: #3a3a3a;
-  list-style-type:none;
-  /*box-sizing: border-box;*
-}
-*/
-
-/*
-copying from the below code from
-https://courses.wesbos.com/account/access/65f09a1def019c4c894ea82f/view/195970444
-2:19
-*/
-
 html{
   box-sizing:border-box;
-
-  /*
-  border:5px solid rgb(220, 92, 130);
-  */
 }
-
-/*
-what is this for?
-*
-
-*, *:before, *:after{
-  box-sizing: inherit;
-}
-*/
 
 body{
   font-family: sans-serif;
   margin:0;
   background-color:white;
-
-  /*
-  border:5px solid rgb(94, 222, 59);
-  */
-
-  list-style:none;
+  color:#3a3a3a;
+  font-weight: 500;
 }
 
-/*
-.flex-container{
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: DodgerBlue;
-}
-
-.flex-container .box {
-  background-color: #f1f1f1;
-  width: 50%;
-  margin: 10px;
-  text-align: center;
-  line-height: 45px;
-  font-size: 30px;
-}
-*/
-/*-------------NAV BAR-------------*/
-
-  .wrapper{
-    max-width:100%;
-    margin: 0 auto;
-    padding:20px;
-
-    /*
-    border:5px solid rgb(127, 65, 160);
-    */
-
-    display:flex;
-
-    color:#3a3a3a;
-    font-weight: 100;
-    letter-spacing: 2px;
-  }
-
-  /*LOGO - make the flex-logo 24% of the available width and center text*/
-  .flex-logo{
-    width:18%;
-    padding:1%;
-
-    /*
-    border: 5px solid rgb(94, 222, 59);
-    */
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 250px;
-
-    white-space: nowrap; /*now my name will stop wrapping!!*/
-
-  }
-
-  /*LINKS - Gives a color to the navigation link items & an animation drop down*/
-  .flex-logo a{
+a{
     /*styling*/
     color:#3a3a3a;
     text-decoration: none;
-
+  
     /*animation*/
     transition:all,0.5s;
-
-    padding:2px 20px;
-    
-    /*
-    background: rgba(0,0,0,0.2);
-    */
+  
+    /*displays as in-line block next to eachother*/
+    display: inline-block;
   }
 
-/*hover animation*/
-.flex-logo a:hover{
+a:hover{
   background:rgba(0,0,0,0.3);
+
 }
 
-/*LOGO - make the flex-logo 24% of the available width and center text*/
-/* SAVE 3/12/24 - 6:13PM
-flex-logo{
-  width:18%;
+ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+
+  display:flex;
+}
+
+/*line breaks for whitespace*/
+#my-text::after{
+  content: "\a";
+  white-space: pre;
+}
+
+button{
+  background-color: #3a3a3a;
+  color: white;
+  padding:10px 25px;
+  border:none;
+  text-align: center;
+  text-decoration: none;
+  display:inline-block;
+  border-radius: 6px;
+}
+
+button:hover{
+  background-color: #6f6f6f;
+  color: rgb(206, 206, 206);
+}
+
+/*-------------NAV BAR-------------*/
+
+/* flex container of whole nav bar */
+.wrapper{
+  max-width:100%;
+  margin: 0 auto;
+  padding:20px;
+
+  display:flex;
+
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+/*-------------NAV BAR: LOGO-------------*/
+
+/* nested flex container of logo (20%) partitioned to the left of nav bar */
+.flex-logo{
+  width:19%;
   padding:1%;
-  /*
-  background-color: yellow;
-  text-align:center;
-  *
-
-  border: 5px solid rgb(94, 222, 59);
-
-  /*
-  display: inline-block;
-  vertical-align: top;
-  *
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-basis: 250px;
 
-  /*
-  background-color: aqua;
-  *
-
-  white-space: nowrap; /*now my name will stop wrapping!!*
-
+  white-space: nowrap;
 }
-*/
 
-
-/*aligning the flex-logo image and name together
-.flex-logo >*{
-  display: inline-block;
-  vertical-align: middle;
-}*/
-
-/*.flex-logo > *{
-  border:2px solid red;
-}*/
+/*area of link*/
+.flex-logo a{
+  padding:2px 20px;
+}
 
 .flex-logo ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-
-  display:flex;
   height:10vh;
   justify-content: flex-start;
 }
 
 .flex-logo li{
-  align-self:center; /*align self is to apply to a child, align items is applied to containers*/
-
-  /*
-  border:1px solid rgb(42, 167, 40);
-  */
+  align-self:center;
 }
 
 /*bold Margo in flex-logo*/
@@ -184,203 +107,78 @@ flex-logo{
   font-weight:600;
 }
 
-/*make sure flex-logo image doesn't get bigger*/
+/*make sure logo fits in div container*/
 .flex-logo img{
   height:auto;
   object-fit: contain;
 }
 
-/*
-re-sizes all images to flexbox max-width
-*
-img{
-  max-width: 100vh;
-  max-height: 100vh;
-}
-*/
+/*-------------NAV BAR: ITEMS-------------*/
 
-/*NAV ITEMS - make the other navigation items 74% of the available width and center text*/
+/* nested flex container of items (80%) partitioned to the right of nav bar */
 .flex-nav{
   width: 79%;
   padding: 1%;
-  /*
-  background-color: lightpink;
-  */
-  /* does this do anything?
-  text-align:center;
-  */
-
-  /*
-  border: 5px solid rgb(12, 28, 255);
-  */
 }
 
-/*LINKS - Gives a color to the navigation link items & an animation drop down*/
+/*area of link*/
 .flex-nav a{
-  /*styling*/
-  color:#3a3a3a;
-  text-decoration: none;
-
-  /*animation*/
-  transition:all,0.5s;
-
-
-  /*
-  background: rgba(0,0,0,0.2);
-  */
-
-  /*displays as in-line block next to eachother*/
-  display: inline-block;
-
   padding:20px 20px;
-  /*width:100%; /*takes up the entire width of the item and no more/no less*/
-
-  /*do we need this? It says so in the hw
-  vertical-align: top;*/
-
-  /*width:20vh; /*takes up 20vh total and fits in what it can before going to next
-  text-align:center;*/
-
 }
 
-/*hover animation*/
-.flex-nav a:hover{
-  background:rgba(0,0,0,0.3);
-}
-
+/*put content to right*/
 .flex-nav ul{
-
-  list-style:none;
-  margin:0;
-  padding:0;
-
-  display:flex;
-
   justify-content: flex-end;
-
-  /*
-  border:5px solid red;
-  */
 }
-
-.flex-nav li{
-  /*
-  border:1px solid red;
-  */
-}
-
-/*
-ul li{
-  background: orange;
-  margin:0 auto;
-}
-*/
-
-/*put everything in a line and align it to the top and middle.
-.inline-block{
-  display:inline-block;
-  vertical-align:middle;
-}
-
-/*make the flex-logo 24% of the available width and center text
-.flex-logo{
-  width:23%;
-  padding:1%;
-  text-align:center;
-  background-color: yellow;
-}
-
-/*adjusted flex-logo photo size
-#myLogo{
-  height: 50px;
-  /*background-color: aqua;*
-}*/
-
-/*make the other navigation items 74% of the available width and center text
-.navitems{
-  width: 73%;
-  padding: 1%;
-  background-color: lightpink;
-  text-align:center;
-}
-
-/*make unsorted lists take up 50% of the width and provide automatic margin on left
-ul{
-  width:50%;
-  margin-left:auto;
-  float:right;
-
-  /*margin-left:auto;*/
-  /*float:right;*
-}*/
-
-/*
-ul li{
-  background: orange;
-  margin:0 auto;
-}
-*/
 
 /*-------------BODY AREA-------------*/
 
-/**This reads my whitespaces as a place for a linebreak
-Found answer: 
-https://www.educative.io/answers/how-to-add-a-line-break-using-css
-*/
-
-#my-text::after{
-  content: "\a";
-  white-space: pre;
-}
 
 
-/*how tall section is*/
+/*section wrapper*/
 .heroImg{
-  height: 400px;
+  height: 60%;
   padding: 5%;
-  width:600px;
+  width:60%;
   margin:0 auto;
 
-  display:flex;
-
-  border: 1px solid red;
+  display:flex;  
 }
 
 /*photo area*/
 .imgContent{
-  width:66%;
-  float:left;
+  width:60%;
+  display:flex;
+  justify-content: flex-end;
+}
 
-  border: 3px solid green;
+.imgContent img{
+  align-items: center;
 }
 
 /*text area*/
 .textContent{
-  width:33;
-  float: right;
+  width:70%;
+  display:flex;
+  align-content: center;
+  
 }
 
 .textContent ul{
-  list-style:none;
-  margin:0;
   padding:5% 10%;
-
   display:flex;
-  flex-wrap:wrap;
-  
-  border: 3px solid red;
-  /*
+  align-content: center;
   flex-direction: column;
-  */
+  flex-wrap:wrap;
 }
 
-
+.textContent li{
+  align-self:
+}
 
 /*adjusted my photo size*/
 #myPhoto{
-  height: 400px;
-
-  border: 5px solid rgb(0, 217, 255);
+  height: auto;
 }
 
 
@@ -390,143 +188,30 @@ https://www.educative.io/answers/how-to-add-a-line-break-using-css
   margin: 0 auto;
   padding:20px;
 
-  /*
-  border:5px solid rgb(127, 65, 160);
-  */
-
   display:flex;
-
-  color:#3a3a3a;
+  
   font-weight: 200;
-  letter-spacing: 0px;
 }
 
+/*full width of footer for */
 .flex-footer{
   width: 100%;
-  /*
-  background-color: lightpink;
-  */
-  /* does this do anything?
-  text-align:center;
-  */
-
-  /*
-  border: 5px solid rgb(12, 28, 255);
-  */
 }
 
-
-/*LINKS - Gives a color to the navigation link items & an animation drop down*/
+/*area of links*/
 .flex-footer a{
-  /*styling*/
-  color:#3a3a3a;
-  text-decoration: none;
-
-  /*animation*/
-  transition:all,0.5s;
-
-  /*
-  background: rgba(0,0,0,0.2);
-  */
-
-  /*displays as in-line block next to eachother*/
-  display: inline-block;
-
   padding:10px 10px;
-  /*width:100%; /*takes up the entire width of the item and no more/no less*/
-
-  /*do we need this? It says so in the hw
-  vertical-align: top;*/
-
-  /*width:20vh; /*takes up 20vh total and fits in what it can before going to next
-  text-align:center;*/
-
 }
 
-/*hover animation*/
-.flex-footer a:hover{
-  background:rgba(0,0,0,0.3);
-}
-
+/*footer height and placing icons to the right*/
 .flex-footer ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-  height:5vh;
-
-  display:flex;
-
+  height:10vh;
   justify-content: flex-end;
-  align-items: center;
-/*
-  border:5px solid red;
-  */
 }
 
-/*
-.social{
-  flex:1 1 25%;
-  padding:5px 30px;
-
-  border: 5px solid red;
-}
-*/
-
-/*answer to how to get flex child to stretch and center itself:
-https://stackoverflow.com/questions/28254332/how-to-vertically-center-the-contents-of-a-flexbox-item
-*/
-
+/*area fit the flex container of linked icons*/
 .flex-footer li{
   align-self:stretch;
   display:flex;
   align-items: center;
-
-  /*
-  border:1px solid red;
-  */
 }
-
-/*
-.footerBg{
-  background-color: yellow;
-}
-
-
-/*experimental
-div{
-  width: 30%;
-  display: inline-block;
-}
-
-ul {
-  display: inline-block;
-  width: 50%;
-  margin-left:auto;
-}
-
-li {
-  list-style-type:none;
-  display: inline;
-  /*float:left;
-}
-
-.inline-block{
-  display:inline-block;
-  vertical-align: block;
-}
-
-div.flex-logo{
-  width:23%;
-  padding:1%;
-  text-align:center;
-  background-color:yellow;
-}
-
-body{
-  background-color: gray;
-}
-
-p{
-    text-align: right;
-    color:red;
-}*/
