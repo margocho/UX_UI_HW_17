@@ -1,0 +1,154 @@
+/*-------------APPLIES TO ALL-------------*/
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3a3a3a;
+  list-style-type:none;
+  /*box-sizing: border-box;*/
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container .box {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 30px;
+}
+
+/*-------------NAV BAR-------------*/
+
+/*put everything in a line and align it to the top and middle.*/
+.inline-block{
+  display:inline-block;
+  vertical-align:middle;
+}
+
+/*make the logo 24% of the available width and center text*/
+.logo{
+  width:22%;
+  padding:1%;
+  text-align:center;
+  background-color: yellow;
+}
+
+/*adjusted logo photo size*/
+#myLogo{
+  height: 50px;
+  /*background-color: aqua;*/
+}
+
+/*adjusted my photo size*/
+#myPhoto{
+  height: 400px;
+  /*background-color: aqua;*/
+}
+
+/*make the other navigation items 74% of the available width and center text*/
+.navitems{
+  width: 73%;
+  padding: 1%;
+  background-color: lightpink;
+  text-align:center;
+}
+
+/*make unsorted lists take up 50% of the width and provide automatic margin on left*/
+ul{
+  width:50%;
+  margin-left:auto;
+  float:right;
+
+  /*margin-left:auto;*/
+  /*float:right;*/
+}
+
+ul li{
+  background: orange;
+  margin:1%;
+}
+
+
+/*-------------BODY AREA-------------*/
+/*hero image*/
+.mySection{
+  display:flex;
+  overflow:auto;
+
+  /*  width:flex;*/
+
+  /*  display:grid;
+  grid-template-columns: 33%,66%;*/
+}
+
+/*how tall section is*/
+.heroImg{
+  height: 400px;
+  padding: 5%;
+}
+
+/*how wide section is*/
+.content{
+  width:500px;
+  margin:0 auto;
+}
+
+.imgContent{
+  width:66%;
+  float:left;
+}
+
+.textContent{
+  width:33;
+  float: right;
+}
+
+/*-------------FOOTER-------------*/
+
+.footerBg{
+  background-color: yellow;
+}
+
+
+/*experimental
+div{
+  width: 30%;
+  display: inline-block;
+}
+
+ul {
+  display: inline-block;
+  width: 50%;
+  margin-left:auto;
+}
+
+li {
+  list-style-type:none;
+  display: inline;
+  /*float:left;
+}
+
+.inline-block{
+  display:inline-block;
+  vertical-align: block;
+}
+
+div.logo{
+  width:23%;
+  padding:1%;
+  text-align:center;
+  background-color:yellow;
+}
+
+body{
+  background-color: gray;
+}
+
+p{
+    text-align: right;
+    color:red;
+}*/
